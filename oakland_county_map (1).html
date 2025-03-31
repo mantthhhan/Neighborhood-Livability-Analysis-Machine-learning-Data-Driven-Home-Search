@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5e55bc05a21211229effae303de15194 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5e55bc05a21211229effae303de15194" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5e55bc05a21211229effae303de15194 = L.map(
+                "map_5e55bc05a21211229effae303de15194",
+                {
+                    center: [42.5922, -83.3362],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1775853d83c4ee4891ee76a234faa453 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+    var color_map_ed070d92129641d8af02a079429b4c54 = {};
+
+    
+    color_map_ed070d92129641d8af02a079429b4c54.color = d3.scale.threshold()
+              .domain([56.7, 56.74268537074148, 56.78537074148297, 56.82805611222445, 56.87074148296593, 56.91342685370742, 56.9561122244489, 56.99879759519038, 57.04148296593187, 57.08416833667335, 57.12685370741483, 57.16953907815631, 57.2122244488978, 57.25490981963928, 57.29759519038076, 57.34028056112225, 57.38296593186373, 57.42565130260521, 57.4683366733467, 57.51102204408818, 57.55370741482966, 57.59639278557115, 57.63907815631263, 57.68176352705411, 57.7244488977956, 57.76713426853708, 57.80981963927856, 57.852505010020046, 57.89519038076153, 57.93787575150301, 57.980561122244495, 58.023246492985976, 58.06593186372746, 58.10861723446894, 58.151302605210425, 58.193987975951906, 58.23667334669339, 58.279358717434874, 58.322044088176355, 58.364729458917836, 58.407414829659324, 58.450100200400804, 58.492785571142285, 58.53547094188377, 58.578156312625254, 58.620841683366734, 58.66352705410822, 58.7062124248497, 58.74889779559118, 58.79158316633267, 58.83426853707415, 58.87695390781563, 58.91963927855711, 58.9623246492986, 59.00501002004008, 59.04769539078156, 59.09038076152305, 59.13306613226453, 59.17575150300601, 59.2184368737475, 59.26112224448898, 59.30380761523046, 59.34649298597195, 59.38917835671343, 59.43186372745491, 59.4745490981964, 59.51723446893788, 59.55991983967936, 59.60260521042085, 59.64529058116233, 59.68797595190381, 59.73066132264529, 59.77334669338678, 59.81603206412826, 59.85871743486974, 59.90140280561123, 59.94408817635271, 59.98677354709419, 60.029458917835676, 60.07214428857716, 60.11482965931864, 60.157515030060125, 60.200200400801606, 60.24288577154309, 60.285571142284574, 60.328256513026055, 60.370941883767536, 60.413627254509024, 60.456312625250504, 60.498997995991985, 60.541683366733466, 60.58436873747495, 60.627054108216434, 60.669739478957915, 60.7124248496994, 60.75511022044088, 60.797795591182364, 60.84048096192385, 60.88316633266533, 60.92585170340681, 60.9685370741483, 61.01122244488978, 61.05390781563126, 61.09659318637275, 61.13927855711423, 61.18196392785571, 61.2246492985972, 61.26733466933868, 61.31002004008016, 61.35270541082164, 61.39539078156313, 61.43807615230461, 61.48076152304609, 61.52344689378758, 61.56613226452906, 61.60881763527054, 61.65150300601203, 61.69418837675351, 61.73687374749499, 61.77955911823648, 61.82224448897796, 61.86492985971944, 61.90761523046093, 61.95030060120241, 61.99298597194389, 62.035671342685376, 62.07835671342686, 62.12104208416834, 62.16372745490982, 62.206412825651306, 62.24909819639279, 62.291783567134274, 62.334468937875755, 62.377154308617236, 62.41983967935872, 62.462525050100204, 62.505210420841685, 62.547895791583166, 62.59058116232465, 62.633266533066134, 62.675951903807615, 62.7186372745491, 62.76132264529058, 62.804008016032064, 62.84669338677355, 62.88937875751503, 62.93206412825651, 62.974749498997994, 63.01743486973948, 63.06012024048096, 63.10280561122245, 63.14549098196393, 63.18817635270541, 63.23086172344689, 63.27354709418838, 63.31623246492986, 63.35891783567135, 63.40160320641283, 63.44428857715431, 63.48697394789579, 63.52965931863728, 63.57234468937876, 63.61503006012024, 63.65771543086173, 63.70040080160321, 63.74308617234469, 63.78577154308618, 63.82845691382766, 63.87114228456914, 63.91382765531063, 63.95651302605211, 63.99919839679359, 64.04188376753507, 64.08456913827655, 64.12725450901803, 64.16993987975953, 64.212625250501, 64.25531062124249, 64.29799599198397, 64.34068136272545, 64.38336673346694, 64.42605210420842, 64.4687374749499, 64.51142284569138, 64.55410821643287, 64.59679358717435, 64.63947895791583, 64.68216432865732, 64.7248496993988, 64.76753507014028, 64.81022044088176, 64.85290581162324, 64.89559118236473, 64.93827655310622, 64.9809619238477, 65.02364729458918, 65.06633266533066, 65.10901803607214, 65.15170340681362, 65.1943887775551, 65.2370741482966, 65.27975951903808, 65.32244488977956, 65.36513026052104, 65.40781563126252, 65.450501002004, 65.4931863727455, 65.53587174348698, 65.57855711422846, 65.62124248496994, 65.66392785571142, 65.7066132264529, 65.7492985971944, 65.79198396793588, 65.83466933867736, 65.87735470941884, 65.92004008016032, 65.9627254509018, 66.0054108216433, 66.04809619238478, 66.09078156312626, 66.13346693386774, 66.17615230460922, 66.2188376753507, 66.26152304609218, 66.30420841683367, 66.34689378757515, 66.38957915831664, 66.43226452905812, 66.4749498997996, 66.51763527054108, 66.56032064128257, 66.60300601202405, 66.64569138276553, 66.68837675350701, 66.7310621242485, 66.77374749498998, 66.81643286573146, 66.85911823647295, 66.90180360721443, 66.94448897795591, 66.9871743486974, 67.02985971943887, 67.07254509018037, 67.11523046092185, 67.15791583166333, 67.20060120240481, 67.24328657314629, 67.28597194388777, 67.32865731462925, 67.37134268537073, 67.41402805611223, 67.45671342685371, 67.49939879759519, 67.54208416833667, 67.58476953907815, 67.62745490981965, 67.67014028056113, 67.71282565130261, 67.75551102204409, 67.79819639278557, 67.84088176352705, 67.88356713426853, 67.92625250501003, 67.96893787575151, 68.01162324649299, 68.05430861723447, 68.09699398797595, 68.13967935871744, 68.18236472945893, 68.2250501002004, 68.26773547094189, 68.31042084168337, 68.35310621242485, 68.39579158316633, 68.43847695390781, 68.4811623246493, 68.52384769539078, 68.56653306613227, 68.60921843687375, 68.65190380761523, 68.69458917835672, 68.7372745490982, 68.77995991983968, 68.82264529058116, 68.86533066132264, 68.90801603206413, 68.9507014028056, 68.9933867735471, 69.03607214428858, 69.07875751503006, 69.12144288577154, 69.16412825651302, 69.2068136272545, 69.249498997996, 69.29218436873748, 69.33486973947896, 69.37755511022044, 69.42024048096192, 69.4629258517034, 69.50561122244488, 69.54829659318638, 69.59098196392786, 69.63366733466934, 69.67635270541082, 69.7190380761523, 69.7617234468938, 69.80440881763528, 69.84709418837676, 69.88977955911824, 69.93246492985972, 69.9751503006012, 70.01783567134268, 70.06052104208416, 70.10320641282566, 70.14589178356714, 70.18857715430862, 70.2312625250501, 70.27394789579158, 70.31663326653307, 70.35931863727455, 70.40200400801604, 70.44468937875752, 70.487374749499, 70.53006012024048, 70.57274549098196, 70.61543086172345, 70.65811623246493, 70.70080160320641, 70.7434869739479, 70.78617234468938, 70.82885771543086, 70.87154308617235, 70.91422845691383, 70.95691382765531, 70.9995991983968, 71.04228456913827, 71.08496993987976, 71.12765531062124, 71.17034068136273, 71.21302605210421, 71.25571142284569, 71.29839679358717, 71.34108216432865, 71.38376753507015, 71.42645290581163, 71.46913827655311, 71.51182364729459, 71.55450901803607, 71.59719438877755, 71.63987975951903, 71.68256513026053, 71.72525050100201, 71.76793587174349, 71.81062124248497, 71.85330661322645, 71.89599198396793, 71.93867735470943, 71.98136272545091, 72.02404809619239, 72.06673346693387, 72.10941883767535, 72.15210420841683, 72.19478957915831, 72.2374749498998, 72.28016032064129, 72.32284569138277, 72.36553106212425, 72.40821643286573, 72.45090180360721, 72.4935871743487, 72.53627254509018, 72.57895791583167, 72.62164328657315, 72.66432865731463, 72.70701402805611, 72.74969939879759, 72.79238476953908, 72.83507014028056, 72.87775551102204, 72.92044088176353, 72.963126252505, 73.0058116232465, 73.04849699398798, 73.09118236472946, 73.13386773547094, 73.17655310621242, 73.2192384769539, 73.26192384769539, 73.30460921843687, 73.34729458917836, 73.38997995991984, 73.43266533066132, 73.4753507014028, 73.5180360721443, 73.56072144288578, 73.60340681362726, 73.64609218436874, 73.68877755511022, 73.7314629258517, 73.77414829659318, 73.81683366733466, 73.85951903807614, 73.90220440881764, 73.94488977955912, 73.9875751503006, 74.03026052104208, 74.07294589178358, 74.11563126252506, 74.15831663326654, 74.20100200400802, 74.2436873747495, 74.28637274549098, 74.32905811623246, 74.37174348697394, 74.41442885771542, 74.45711422845692, 74.4997995991984, 74.54248496993988, 74.58517034068136, 74.62785571142285, 74.67054108216433, 74.71322645290581, 74.7559118236473, 74.79859719438878, 74.84128256513026, 74.88396793587174, 74.92665330661322, 74.96933867735471, 75.0120240480962, 75.05470941883767, 75.09739478957916, 75.14008016032064, 75.18276553106213, 75.22545090180361, 75.26813627254509, 75.31082164328657, 75.35350701402805, 75.39619238476953, 75.43887775551102, 75.4815631262525, 75.52424849699399, 75.56693386773547, 75.60961923847695, 75.65230460921843, 75.69498997995991, 75.73767535070141, 75.78036072144289, 75.82304609218437, 75.86573146292585, 75.90841683366733, 75.95110220440881, 75.9937875751503, 76.03647294589177, 76.07915831663327, 76.12184368737475, 76.16452905811623, 76.20721442885771, 76.2498997995992, 76.29258517034069, 76.33527054108217, 76.37795591182365, 76.42064128256513, 76.46332665330661, 76.50601202404809, 76.54869739478957, 76.59138276553107, 76.63406813627255, 76.67675350701403, 76.71943887775551, 76.76212424849699, 76.80480961923848, 76.84749498997996, 76.89018036072144, 76.93286573146293, 76.9755511022044, 77.01823647294589, 77.06092184368737, 77.10360721442885, 77.14629258517034, 77.18897795591182, 77.2316633266533, 77.27434869739479, 77.31703406813627, 77.35971943887776, 77.40240480961924, 77.44509018036072, 77.4877755511022, 77.53046092184368, 77.57314629258516, 77.61583166332665, 77.65851703406814, 77.70120240480962, 77.7438877755511, 77.78657314629258, 77.82925851703406, 77.87194388777556, 77.91462925851704, 77.95731462925852, 78.0])
+              .range(['#ff0000ff', '#ff0100ff', '#ff0200ff', '#ff0300ff', '#ff0400ff', '#ff0500ff', '#ff0600ff', '#ff0700ff', '#ff0800ff', '#ff0900ff', '#ff0a00ff', '#ff0b00ff', '#ff0c00ff', '#ff0d00ff', '#ff0e00ff', '#ff0f00ff', '#ff1000ff', '#ff1100ff', '#ff1200ff', '#ff1300ff', '#ff1400ff', '#ff1500ff', '#ff1600ff', '#ff1700ff', '#ff1800ff', '#ff1900ff', '#ff1a00ff', '#ff1b00ff', '#ff1c00ff', '#ff1d00ff', '#ff1e00ff', '#ff1f00ff', '#ff2000ff', '#ff2100ff', '#ff2200ff', '#ff2300ff', '#ff2400ff', '#ff2500ff', '#ff2600ff', '#ff2800ff', '#ff2900ff', '#ff2a00ff', '#ff2b00ff', '#ff2c00ff', '#ff2d00ff', '#ff2e00ff', '#ff2f00ff', '#ff3000ff', '#ff3100ff', '#ff3200ff', '#ff3300ff', '#ff3400ff', '#ff3500ff', '#ff3600ff', '#ff3700ff', '#ff3800ff', '#ff3900ff', '#ff3a00ff', '#ff3b00ff', '#ff3c00ff', '#ff3d00ff', '#ff3e00ff', '#ff3f00ff', '#ff4000ff', '#ff4100ff', '#ff4200ff', '#ff4300ff', '#ff4400ff', '#ff4500ff', '#ff4600ff', '#ff4700ff', '#ff4800ff', '#ff4900ff', '#ff4a00ff', '#ff4b00ff', '#ff4c00ff', '#ff4d00ff', '#ff4f00ff', '#ff5000ff', '#ff5100ff', '#ff5200ff', '#ff5300ff', '#ff5400ff', '#ff5500ff', '#ff5600ff', '#ff5700ff', '#ff5800ff', '#ff5900ff', '#ff5a00ff', '#ff5b00ff', '#ff5c00ff', '#ff5d00ff', '#ff5e00ff', '#ff5f00ff', '#ff6000ff', '#ff6100ff', '#ff6200ff', '#ff6300ff', '#ff6400ff', '#ff6500ff', '#ff6600ff', '#ff6700ff', '#ff6800ff', '#ff6900ff', '#ff6a00ff', '#ff6b00ff', '#ff6c00ff', '#ff6d00ff', '#ff6e00ff', '#ff6f00ff', '#ff7000ff', '#ff7100ff', '#ff7200ff', '#ff7300ff', '#ff7400ff', '#ff7500ff', '#ff7700ff', '#ff7800ff', '#ff7900ff', '#ff7a00ff', '#ff7b00ff', '#ff7c00ff', '#ff7d00ff', '#ff7e00ff', '#ff7f00ff', '#ff8000ff', '#ff8100ff', '#ff8200ff', '#ff8300ff', '#ff8400ff', '#ff8500ff', '#ff8600ff', '#ff8700ff', '#ff8800ff', '#ff8900ff', '#ff8a00ff', '#ff8b00ff', '#ff8c00ff', '#ff8d00ff', '#ff8e00ff', '#ff8f00ff', '#ff9000ff', '#ff9100ff', '#ff9200ff', '#ff9300ff', '#ff9400ff', '#ff9500ff', '#ff9600ff', '#ff9700ff', '#ff9800ff', '#ff9900ff', '#ff9a00ff', '#ff9b00ff', '#ff9c00ff', '#ff9e00ff', '#ff9f00ff', '#ffa000ff', '#ffa100ff', '#ffa200ff', '#ffa300ff', '#ffa400ff', '#ffa500ff', '#ffa600ff', '#ffa700ff', '#ffa800ff', '#ffa900ff', '#ffaa00ff', '#ffab00ff', '#ffac00ff', '#ffad00ff', '#ffae00ff', '#ffaf00ff', '#ffb000ff', '#ffb100ff', '#ffb200ff', '#ffb300ff', '#ffb400ff', '#ffb500ff', '#ffb600ff', '#ffb700ff', '#ffb800ff', '#ffb900ff', '#ffba00ff', '#ffbb00ff', '#ffbc00ff', '#ffbd00ff', '#ffbe00ff', '#ffbf00ff', '#ffc000ff', '#ffc100ff', '#ffc200ff', '#ffc300ff', '#ffc500ff', '#ffc600ff', '#ffc700ff', '#ffc800ff', '#ffc900ff', '#ffca00ff', '#ffcb00ff', '#ffcc00ff', '#ffcd00ff', '#ffce00ff', '#ffcf00ff', '#ffd000ff', '#ffd100ff', '#ffd200ff', '#ffd300ff', '#ffd400ff', '#ffd500ff', '#ffd600ff', '#ffd700ff', '#ffd800ff', '#ffd900ff', '#ffda00ff', '#ffdb00ff', '#ffdc00ff', '#ffdd00ff', '#ffde00ff', '#ffdf00ff', '#ffe000ff', '#ffe100ff', '#ffe200ff', '#ffe300ff', '#ffe400ff', '#ffe500ff', '#ffe600ff', '#ffe700ff', '#ffe800ff', '#ffe900ff', '#ffea00ff', '#ffeb00ff', '#ffed00ff', '#ffee00ff', '#ffef00ff', '#fff000ff', '#fff100ff', '#fff200ff', '#fff300ff', '#fff400ff', '#fff500ff', '#fff600ff', '#fff700ff', '#fff800ff', '#fff900ff', '#fffa00ff', '#fffb00ff', '#fffc00ff', '#fffd00ff', '#fffe00ff', '#ffff00ff', '#ffff00ff', '#feff00ff', '#fdfe00ff', '#fcfe00ff', '#fbfd00ff', '#fafd00ff', '#f9fc00ff', '#f8fc00ff', '#f7fb00ff', '#f6fb00ff', '#f5fa00ff', '#f4fa00ff', '#f3f900ff', '#f2f900ff', '#f1f800ff', '#f0f800ff', '#eff700ff', '#eef700ff', '#edf600ff', '#ebf600ff', '#eaf500ff', '#e9f500ff', '#e8f400ff', '#e7f300ff', '#e6f300ff', '#e5f200ff', '#e4f200ff', '#e3f100ff', '#e2f100ff', '#e1f000ff', '#e0f000ff', '#dfef00ff', '#deef00ff', '#ddee00ff', '#dcee00ff', '#dbed00ff', '#daed00ff', '#d9ec00ff', '#d8ec00ff', '#d7eb00ff', '#d6eb00ff', '#d5ea00ff', '#d4ea00ff', '#d3e900ff', '#d2e900ff', '#d1e800ff', '#d0e800ff', '#cfe700ff', '#cee700ff', '#cde600ff', '#cce600ff', '#cbe500ff', '#cae500ff', '#c9e400ff', '#c8e400ff', '#c7e300ff', '#c6e300ff', '#c5e200ff', '#c3e200ff', '#c2e100ff', '#c1e100ff', '#c0e000ff', '#bfe000ff', '#bedf00ff', '#bddf00ff', '#bcde00ff', '#bbde00ff', '#badd00ff', '#b9dc00ff', '#b8dc00ff', '#b7db00ff', '#b6db00ff', '#b5da00ff', '#b4da00ff', '#b3d900ff', '#b2d900ff', '#b1d800ff', '#b0d800ff', '#afd700ff', '#aed700ff', '#add600ff', '#acd600ff', '#abd500ff', '#aad500ff', '#a9d400ff', '#a8d400ff', '#a7d300ff', '#a6d300ff', '#a5d200ff', '#a4d200ff', '#a3d100ff', '#a2d100ff', '#a1d000ff', '#a0d000ff', '#9fcf00ff', '#9ecf00ff', '#9cce00ff', '#9bce00ff', '#9acd00ff', '#99cd00ff', '#98cc00ff', '#97cc00ff', '#96cb00ff', '#95cb00ff', '#94ca00ff', '#93ca00ff', '#92c900ff', '#91c900ff', '#90c800ff', '#8fc800ff', '#8ec700ff', '#8dc700ff', '#8cc600ff', '#8bc500ff', '#8ac500ff', '#89c400ff', '#88c400ff', '#87c300ff', '#86c300ff', '#85c200ff', '#84c200ff', '#83c100ff', '#82c100ff', '#81c000ff', '#80c000ff', '#7fbf00ff', '#7ebf00ff', '#7dbe00ff', '#7cbe00ff', '#7bbd00ff', '#7abd00ff', '#79bc00ff', '#78bc00ff', '#77bb00ff', '#75bb00ff', '#74ba00ff', '#73ba00ff', '#72b900ff', '#71b900ff', '#70b800ff', '#6fb800ff', '#6eb700ff', '#6db700ff', '#6cb600ff', '#6bb600ff', '#6ab500ff', '#69b500ff', '#68b400ff', '#67b400ff', '#66b300ff', '#65b300ff', '#64b200ff', '#63b200ff', '#62b100ff', '#61b100ff', '#60b000ff', '#5fb000ff', '#5eaf00ff', '#5daf00ff', '#5cae00ff', '#5bad00ff', '#5aad00ff', '#59ac00ff', '#58ac00ff', '#57ab00ff', '#56ab00ff', '#55aa00ff', '#54aa00ff', '#53a900ff', '#52a900ff', '#51a800ff', '#50a800ff', '#4fa700ff', '#4da700ff', '#4ca600ff', '#4ba600ff', '#4aa500ff', '#49a500ff', '#48a400ff', '#47a400ff', '#46a300ff', '#45a300ff', '#44a200ff', '#43a200ff', '#42a100ff', '#41a100ff', '#40a000ff', '#3fa000ff', '#3e9f00ff', '#3d9f00ff', '#3c9e00ff', '#3b9e00ff', '#3a9d00ff', '#399d00ff', '#389c00ff', '#379c00ff', '#369b00ff', '#359b00ff', '#349a00ff', '#339a00ff', '#329900ff', '#319900ff', '#309800ff', '#2f9800ff', '#2e9700ff', '#2d9600ff', '#2c9600ff', '#2b9500ff', '#2a9500ff', '#299400ff', '#289400ff', '#269300ff', '#259300ff', '#249200ff', '#239200ff', '#229100ff', '#219100ff', '#209000ff', '#1f9000ff', '#1e8f00ff', '#1d8f00ff', '#1c8e00ff', '#1b8e00ff', '#1a8d00ff', '#198d00ff', '#188c00ff', '#178c00ff', '#168b00ff', '#158b00ff', '#148a00ff', '#138a00ff', '#128900ff', '#118900ff', '#108800ff', '#0f8800ff', '#0e8700ff', '#0d8700ff', '#0c8600ff', '#0b8600ff', '#0a8500ff', '#098500ff', '#088400ff', '#078400ff', '#068300ff', '#058300ff', '#048200ff', '#038200ff', '#028100ff', '#018100ff', '#008000ff']);
+    
+
+    color_map_ed070d92129641d8af02a079429b4c54.x = d3.scale.linear()
+              .domain([56.7, 78.0])
+              .range([0, 450 - 50]);
+
+    color_map_ed070d92129641d8af02a079429b4c54.legend = L.control({position: 'topright'});
+    color_map_ed070d92129641d8af02a079429b4c54.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_ed070d92129641d8af02a079429b4c54.legend.addTo(map_5e55bc05a21211229effae303de15194);
+
+    color_map_ed070d92129641d8af02a079429b4c54.xAxis = d3.svg.axis()
+        .scale(color_map_ed070d92129641d8af02a079429b4c54.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([56.7, 67.35, 78.0]);
+
+    color_map_ed070d92129641d8af02a079429b4c54.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_ed070d92129641d8af02a079429b4c54.g = color_map_ed070d92129641d8af02a079429b4c54.svg.append("g")
+        .attr("class", "key")
+        .attr("transform", "translate(25,16)");
+
+    color_map_ed070d92129641d8af02a079429b4c54.g.selectAll("rect")
+        .data(color_map_ed070d92129641d8af02a079429b4c54.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_ed070d92129641d8af02a079429b4c54.x(color_map_ed070d92129641d8af02a079429b4c54.color.domain()[i - 1]) : color_map_ed070d92129641d8af02a079429b4c54.x.range()[0],
+            x1: i < color_map_ed070d92129641d8af02a079429b4c54.color.domain().length ? color_map_ed070d92129641d8af02a079429b4c54.x(color_map_ed070d92129641d8af02a079429b4c54.color.domain()[i]) : color_map_ed070d92129641d8af02a079429b4c54.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_ed070d92129641d8af02a079429b4c54.g.call(color_map_ed070d92129641d8af02a079429b4c54.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .text("");
+    
+            var circle_marker_f80e068c7577e8bd35f2bae391563570 = L.circleMarker(
+                [42.6064, -83.1497],
+                {"bubblingMouseEvents": true, "color": "#ffb900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffb900ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_653879912cf90b41af08f132eb67fe98 = L.popup({"maxWidth": 300});
+
+        
+            var html_a230221ccbc9319f0f2a144fa763b463 = $(`<div id="html_a230221ccbc9319f0f2a144fa763b463" style="width: 100.0%; height: 100.0%;">     <b>Troy</b><br>     Overall Score: 64.4<br>     Safety Score: 88.9<br>     Affordability Score: 44.4<br>     Livability Score: 51.9<br>     Average Rent: $2200<br>     Parks Nearby: 8<br>     Grocery Stores: 6<br>     Transit Stops: 11     </div>`)[0];
+            popup_653879912cf90b41af08f132eb67fe98.setContent(html_a230221ccbc9319f0f2a144fa763b463);
+        
+
+        circle_marker_f80e068c7577e8bd35f2bae391563570.bindPopup(popup_653879912cf90b41af08f132eb67fe98)
+        ;
+
+        
+    
+    
+            var circle_marker_182c82f39a62ebb19a1455d6faa145f3 = L.circleMarker(
+                [42.4814, -83.3771],
+                {"bubblingMouseEvents": true, "color": "#cce600ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cce600ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_5dccc09e4244e38b293ec017d2a440a8 = L.popup({"maxWidth": 300});
+
+        
+            var html_e19e38cd0c1d1f0f4a4814d2d744d505 = $(`<div id="html_e19e38cd0c1d1f0f4a4814d2d744d505" style="width: 100.0%; height: 100.0%;">     <b>Farmington Hills</b><br>     Overall Score: 69.5<br>     Safety Score: 77.8<br>     Affordability Score: 66.7<br>     Livability Score: 61.2<br>     Average Rent: $1800<br>     Parks Nearby: 5<br>     Grocery Stores: 10<br>     Transit Stops: 17     </div>`)[0];
+            popup_5dccc09e4244e38b293ec017d2a440a8.setContent(html_e19e38cd0c1d1f0f4a4814d2d744d505);
+        
+
+        circle_marker_182c82f39a62ebb19a1455d6faa145f3.bindPopup(popup_5dccc09e4244e38b293ec017d2a440a8)
+        ;
+
+        
+    
+    
+            var circle_marker_2559ff8a756e450c3ad7395064afb390 = L.circleMarker(
+                [42.6583, -83.1499],
+                {"bubblingMouseEvents": true, "color": "#008000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#008000ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_3615bae2be6229f4bd139c0bbe1759dd = L.popup({"maxWidth": 300});
+
+        
+            var html_ec5c26bc5f89bf232960aa75673b4c61 = $(`<div id="html_ec5c26bc5f89bf232960aa75673b4c61" style="width: 100.0%; height: 100.0%;">     <b>Rochester Hills</b><br>     Overall Score: 78.0<br>     Safety Score: 88.9<br>     Affordability Score: 55.6<br>     Livability Score: 85.7<br>     Average Rent: $2000<br>     Parks Nearby: 14<br>     Grocery Stores: 10<br>     Transit Stops: 16     </div>`)[0];
+            popup_3615bae2be6229f4bd139c0bbe1759dd.setContent(html_ec5c26bc5f89bf232960aa75673b4c61);
+        
+
+        circle_marker_2559ff8a756e450c3ad7395064afb390.bindPopup(popup_3615bae2be6229f4bd139c0bbe1759dd)
+        ;
+
+        
+    
+    
+            var circle_marker_6339ca19bd6d50fa3e60145e6dddc673 = L.circleMarker(
+                [42.4895, -83.1446],
+                {"bubblingMouseEvents": true, "color": "#7cbe00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7cbe00ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_65a31aceda4b5d3ae64d6acd189fb00b = L.popup({"maxWidth": 300});
+
+        
+            var html_f59a2cd6552162ac7bd8115f17f6ed6b = $(`<div id="html_f59a2cd6552162ac7bd8115f17f6ed6b" style="width: 100.0%; height: 100.0%;">     <b>Royal Oak</b><br>     Overall Score: 72.8<br>     Safety Score: 77.8<br>     Affordability Score: 61.1<br>     Livability Score: 77.9<br>     Average Rent: $1900<br>     Parks Nearby: 12<br>     Grocery Stores: 5<br>     Transit Stops: 26     </div>`)[0];
+            popup_65a31aceda4b5d3ae64d6acd189fb00b.setContent(html_f59a2cd6552162ac7bd8115f17f6ed6b);
+        
+
+        circle_marker_6339ca19bd6d50fa3e60145e6dddc673.bindPopup(popup_65a31aceda4b5d3ae64d6acd189fb00b)
+        ;
+
+        
+    
+    
+            var circle_marker_1099dd2c5d435205780bd1de3baac979 = L.circleMarker(
+                [42.4806, -83.4755],
+                {"bubblingMouseEvents": true, "color": "#d1e800ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d1e800ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_fbe6cdaf032265e69641a008fff09df9 = L.popup({"maxWidth": 300});
+
+        
+            var html_f792052863bf20e1a2e31eb855e1828c = $(`<div id="html_f792052863bf20e1a2e31eb855e1828c" style="width: 100.0%; height: 100.0%;">     <b>Novi</b><br>     Overall Score: 69.3<br>     Safety Score: 88.9<br>     Affordability Score: 50.0<br>     Livability Score: 62.5<br>     Average Rent: $2100<br>     Parks Nearby: 9<br>     Grocery Stores: 8<br>     Transit Stops: 13     </div>`)[0];
+            popup_fbe6cdaf032265e69641a008fff09df9.setContent(html_f792052863bf20e1a2e31eb855e1828c);
+        
+
+        circle_marker_1099dd2c5d435205780bd1de3baac979.bindPopup(popup_fbe6cdaf032265e69641a008fff09df9)
+        ;
+
+        
+    
+    
+            var circle_marker_371f14381744f53320bb469db43a670a = L.circleMarker(
+                [42.6389, -83.2907],
+                {"bubblingMouseEvents": true, "color": "#ffdd00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffdd00ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_8e873a164d7e180da9f4894f7b4ac635 = L.popup({"maxWidth": 300});
+
+        
+            var html_3e0a9a790f96b3073361656419a9b725 = $(`<div id="html_3e0a9a790f96b3073361656419a9b725" style="width: 100.0%; height: 100.0%;">     <b>Pontiac</b><br>     Overall Score: 65.9<br>     Safety Score: 33.3<br>     Affordability Score: 100.0<br>     Livability Score: 75.2<br>     Average Rent: $1200<br>     Parks Nearby: 14<br>     Grocery Stores: 7<br>     Transit Stops: 14     </div>`)[0];
+            popup_8e873a164d7e180da9f4894f7b4ac635.setContent(html_3e0a9a790f96b3073361656419a9b725);
+        
+
+        circle_marker_371f14381744f53320bb469db43a670a.bindPopup(popup_8e873a164d7e180da9f4894f7b4ac635)
+        ;
+
+        
+    
+    
+            var circle_marker_2599650d0c112a10939c6ba3e2ed1629 = L.circleMarker(
+                [42.6875, -83.2341],
+                {"bubblingMouseEvents": true, "color": "#ff7500ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7500ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_289c01f88898b03f4dbc9a45a0056a71 = L.popup({"maxWidth": 300});
+
+        
+            var html_87cac9f47db5876671e4272db895c148 = $(`<div id="html_87cac9f47db5876671e4272db895c148" style="width: 100.0%; height: 100.0%;">     <b>Auburn Hills</b><br>     Overall Score: 61.6<br>     Safety Score: 77.8<br>     Affordability Score: 66.7<br>     Livability Score: 35.0<br>     Average Rent: $1800<br>     Parks Nearby: 6<br>     Grocery Stores: 4<br>     Transit Stops: 6     </div>`)[0];
+            popup_289c01f88898b03f4dbc9a45a0056a71.setContent(html_87cac9f47db5876671e4272db895c148);
+        
+
+        circle_marker_2599650d0c112a10939c6ba3e2ed1629.bindPopup(popup_289c01f88898b03f4dbc9a45a0056a71)
+        ;
+
+        
+    
+    
+            var circle_marker_ad223fc31b9834bcc7fa5a8bb07b37b3 = L.circleMarker(
+                [42.5467, -83.2154],
+                {"bubblingMouseEvents": true, "color": "#ff5400ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff5400ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_31cca5c806aa8be582ec68041f23f6e0 = L.popup({"maxWidth": 300});
+
+        
+            var html_171b764b6c55bce65121c1bc36f3e180 = $(`<div id="html_171b764b6c55bce65121c1bc36f3e180" style="width: 100.0%; height: 100.0%;">     <b>Birmingham</b><br>     Overall Score: 60.2<br>     Safety Score: 88.9<br>     Affordability Score: 11.1<br>     Livability Score: 70.9<br>     Average Rent: $2800<br>     Parks Nearby: 8<br>     Grocery Stores: 10<br>     Transit Stops: 18     </div>`)[0];
+            popup_31cca5c806aa8be582ec68041f23f6e0.setContent(html_171b764b6c55bce65121c1bc36f3e180);
+        
+
+        circle_marker_ad223fc31b9834bcc7fa5a8bb07b37b3.bindPopup(popup_31cca5c806aa8be582ec68041f23f6e0)
+        ;
+
+        
+    
+    
+            var circle_marker_4920438c57a6472ea9bd03137dacfc9e = L.circleMarker(
+                [42.4733, -83.2218],
+                {"bubblingMouseEvents": true, "color": "#bddf00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bddf00ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_a97ed2afaf99ddee10dc0683651f1eaa = L.popup({"maxWidth": 300});
+
+        
+            var html_754df5a7ecff38814aaf5d7a4bd6f5c6 = $(`<div id="html_754df5a7ecff38814aaf5d7a4bd6f5c6" style="width: 100.0%; height: 100.0%;">     <b>Southfield</b><br>     Overall Score: 70.1<br>     Safety Score: 55.6<br>     Affordability Score: 83.3<br>     Livability Score: 76.3<br>     Average Rent: $1500<br>     Parks Nearby: 11<br>     Grocery Stores: 8<br>     Transit Stops: 20     </div>`)[0];
+            popup_a97ed2afaf99ddee10dc0683651f1eaa.setContent(html_754df5a7ecff38814aaf5d7a4bd6f5c6);
+        
+
+        circle_marker_4920438c57a6472ea9bd03137dacfc9e.bindPopup(popup_a97ed2afaf99ddee10dc0683651f1eaa)
+        ;
+
+        
+    
+    
+            var circle_marker_3b136c4b9da188a4ae5211bac0931a1b = L.circleMarker(
+                [42.5567, -83.3827],
+                {"bubblingMouseEvents": true, "color": "#ff0000ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_9b8c4c1355b193250e306dd23c1080f5 = L.popup({"maxWidth": 300});
+
+        
+            var html_07a5489b868278a712397d907aa8b7b9 = $(`<div id="html_07a5489b868278a712397d907aa8b7b9" style="width: 100.0%; height: 100.0%;">     <b>West Bloomfield Township</b><br>     Overall Score: 56.7<br>     Safety Score: 88.9<br>     Affordability Score: 38.9<br>     Livability Score: 31.6<br>     Average Rent: $2300<br>     Parks Nearby: 4<br>     Grocery Stores: 4<br>     Transit Stops: 8     </div>`)[0];
+            popup_9b8c4c1355b193250e306dd23c1080f5.setContent(html_07a5489b868278a712397d907aa8b7b9);
+        
+
+        circle_marker_3b136c4b9da188a4ae5211bac0931a1b.bindPopup(popup_9b8c4c1355b193250e306dd23c1080f5)
+        ;
+
+        
+    
+    
+            var circle_marker_b0dee518bebbcd17a62c25cf5d170d23 = L.circleMarker(
+                [42.5836, -83.2455],
+                {"bubblingMouseEvents": true, "color": "#ff9900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff9900ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_32ff8c0f4f5dddcd5b59d3656e91480b = L.popup({"maxWidth": 300});
+
+        
+            var html_a0d89d0f21636ab90c4c931ab9b4de20 = $(`<div id="html_a0d89d0f21636ab90c4c931ab9b4de20" style="width: 100.0%; height: 100.0%;">     <b>Bloomfield Township</b><br>     Overall Score: 63.1<br>     Safety Score: 88.9<br>     Affordability Score: 27.8<br>     Livability Score: 63.9<br>     Average Rent: $2500<br>     Parks Nearby: 8<br>     Grocery Stores: 7<br>     Transit Stops: 19     </div>`)[0];
+            popup_32ff8c0f4f5dddcd5b59d3656e91480b.setContent(html_a0d89d0f21636ab90c4c931ab9b4de20);
+        
+
+        circle_marker_b0dee518bebbcd17a62c25cf5d170d23.bindPopup(popup_32ff8c0f4f5dddcd5b59d3656e91480b)
+        ;
+
+        
+    
+    
+            var circle_marker_0f5e85297b9e2c7bc8413515a2c7bef0 = L.circleMarker(
+                [42.6907, -83.4033],
+                {"bubblingMouseEvents": true, "color": "#ffbb00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffbb00ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_082714deec429cf09ffb39b2436f13e5 = L.popup({"maxWidth": 300});
+
+        
+            var html_acf8bef4a81d9022d27e25d70c4f8d21 = $(`<div id="html_acf8bef4a81d9022d27e25d70c4f8d21" style="width: 100.0%; height: 100.0%;">     <b>Waterford Township</b><br>     Overall Score: 64.5<br>     Safety Score: 66.7<br>     Affordability Score: 77.8<br>     Livability Score: 48.2<br>     Average Rent: $1600<br>     Parks Nearby: 12<br>     Grocery Stores: 3<br>     Transit Stops: 5     </div>`)[0];
+            popup_082714deec429cf09ffb39b2436f13e5.setContent(html_acf8bef4a81d9022d27e25d70c4f8d21);
+        
+
+        circle_marker_0f5e85297b9e2c7bc8413515a2c7bef0.bindPopup(popup_082714deec429cf09ffb39b2436f13e5)
+        ;
+
+        
+    
+    
+            var circle_marker_acefd101a722b9d87c4400002a9fc99c = L.circleMarker(
+                [42.5853, -83.4855],
+                {"bubblingMouseEvents": true, "color": "#9cce00ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9cce00ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_36617abe0312b553acb98d8ff9145295 = L.popup({"maxWidth": 300});
+
+        
+            var html_373f7662fb095c78de531b174b12d881 = $(`<div id="html_373f7662fb095c78de531b174b12d881" style="width: 100.0%; height: 100.0%;">     <b>Commerce Township</b><br>     Overall Score: 71.5<br>     Safety Score: 77.8<br>     Affordability Score: 61.1<br>     Livability Score: 73.4<br>     Average Rent: $1900<br>     Parks Nearby: 12<br>     Grocery Stores: 8<br>     Transit Stops: 15     </div>`)[0];
+            popup_36617abe0312b553acb98d8ff9145295.setContent(html_373f7662fb095c78de531b174b12d881);
+        
+
+        circle_marker_acefd101a722b9d87c4400002a9fc99c.bindPopup(popup_36617abe0312b553acb98d8ff9145295)
+        ;
+
+        
+    
+    
+            var circle_marker_a86a8421dc1b27e975b9586ee7f8a909 = L.circleMarker(
+                [42.6493, -83.4919],
+                {"bubblingMouseEvents": true, "color": "#2d9700ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2d9700ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_5255f24a4e9ed86cbf8503db98bade9d = L.popup({"maxWidth": 300});
+
+        
+            var html_3a93d6aa929412461d0712ebd83d4ef4 = $(`<div id="html_3a93d6aa929412461d0712ebd83d4ef4" style="width: 100.0%; height: 100.0%;">     <b>White Lake Township</b><br>     Overall Score: 76.1<br>     Safety Score: 77.8<br>     Affordability Score: 72.2<br>     Livability Score: 77.6<br>     Average Rent: $1700<br>     Parks Nearby: 9<br>     Grocery Stores: 11<br>     Transit Stops: 19     </div>`)[0];
+            popup_5255f24a4e9ed86cbf8503db98bade9d.setContent(html_3a93d6aa929412461d0712ebd83d4ef4);
+        
+
+        circle_marker_a86a8421dc1b27e975b9586ee7f8a909.bindPopup(popup_5255f24a4e9ed86cbf8503db98bade9d)
+        ;
+
+        
+    
+    
+            var circle_marker_68bf4d1affecf68dd625c08e37b7d770 = L.circleMarker(
+                [42.7492, -83.1044],
+                {"bubblingMouseEvents": true, "color": "#ff6900ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff6900ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_5e55bc05a21211229effae303de15194);
+        
+    
+        var popup_9b80d6a526d5b8e22d308ef459b5c1fd = L.popup({"maxWidth": 300});
+
+        
+            var html_3a350bc0ac812d6406b29ec2773eb565 = $(`<div id="html_3a350bc0ac812d6406b29ec2773eb565" style="width: 100.0%; height: 100.0%;">     <b>Oakland Township</b><br>     Overall Score: 61.1<br>     Safety Score: 100.0<br>     Affordability Score: 33.3<br>     Livability Score: 36.9<br>     Average Rent: $2400<br>     Parks Nearby: 6<br>     Grocery Stores: 3<br>     Transit Stops: 10     </div>`)[0];
+            popup_9b80d6a526d5b8e22d308ef459b5c1fd.setContent(html_3a350bc0ac812d6406b29ec2773eb565);
+        
+
+        circle_marker_68bf4d1affecf68dd625c08e37b7d770.bindPopup(popup_9b80d6a526d5b8e22d308ef459b5c1fd)
+        ;
+
+        
+    
+</script>
+</html>
